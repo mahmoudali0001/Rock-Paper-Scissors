@@ -1,0 +1,463 @@
+body {
+  background: radial-gradient(
+    circle at 50% 0%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  font-family: "Barlow Semi Condensed", sans-serif;
+  min-height: 97.5vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Start Score and Logo  */
+.score-logo {
+  border: 3px solid rgba(255, 255, 255, 0.274);
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+}
+
+@media (max-width: 576px) {
+  .score-logo {
+    width: calc(100% - 30px);
+  }
+}
+
+.score-logo .score {
+  background-color: #fff;
+  padding: 10px 40px;
+  text-align: center;
+  border-radius: 7px;
+}
+
+@media (max-width: 576px) {
+  .score-logo .score {
+    padding: 5px 25px;
+  }
+}
+
+.score-logo .score span {
+  color: hsl(229, 64%, 46%);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.score-logo .score h3 {
+  margin: 0;
+  font-size: 60px;
+  color: #464646;
+  line-height: 1;
+}
+
+@media (max-width: 576px) {
+  .score-logo .logo {
+    width: 120px;
+    height: 85px;
+  }
+}
+/* End Score and Logo  */
+
+/* Start Rock, Paper, Scissors Buttons  step 1*/
+.step-1 {
+  display: flex;
+  margin: auto;
+  width: 30%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+@media (max-width: 992px) {
+  .step-1 {
+    width: 40%;
+  }
+}
+
+@media (max-width: 767px) {
+  .step-1 {
+    width: 60%;
+  }
+}
+
+@media (max-width: 576px) {
+  .step-1 {
+    width: 92%;
+  }
+}
+
+.step-1 div,
+.step-2 div div {
+  background-color: #fff;
+  width: fit-content;
+  padding: 28px;
+  border-radius: 50%;
+  width: 135px;
+  height: 135px;
+  position: relative;
+  box-shadow: inset 6px 9px 10px -1px #bdbdbd;
+  cursor: pointer;
+}
+
+.step-1 .paper,
+.step-2 .paper {
+  border: 15px solid hsl(230, 89%, 65%);
+  margin-right: 25px;
+}
+
+.step-1 .paper::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 150px;
+  background-color: #11162a;
+  transform: rotate(90deg);
+  z-index: -1;
+  top: -15px;
+  right: -40%;
+}
+
+.step-1 .scissors,
+.step-2 .scissors {
+  border: 15px solid hsl(40, 84%, 53%);
+}
+
+.step-1 .scissors::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 150px;
+  background-color: #11162a;
+  transform: rotate(30deg);
+  z-index: -1;
+  bottom: -100px;
+  left: 0;
+}
+
+.step-1 .rock,
+.step-2 .rock {
+  border: 15px solid hsl(349, 70%, 56%);
+}
+
+.step-1 .rock::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 150px;
+  background-color: rgb(17, 22, 42);
+  transform: rotate(150deg);
+  z-index: -1;
+  left: 6px;
+  top: -100px;
+}
+/* End Rock, Paper, Scissors Buttons  step 1*/
+
+/* Start Rules */
+.rules-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border: 1px solid #fff;
+  padding: 8px 30px;
+  color: white;
+  border-radius: 10px;
+}
+
+.rules-btn span {
+  margin: 0;
+  font-weight: 100;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.rules-btn:hover {
+  background-color: #fff;
+  color: hsl(214, 47%, 23%);
+  transition: 0.5s ease-out;
+}
+/* End Rules */
+
+/* Start Rules Message */
+.rules-msg {
+  background-color: #fff;
+  width: 400px;
+  padding: 20px 0;
+  border-radius: 10px;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: 1s ease-out;
+}
+
+.show-rules {
+  top: 50%;
+}
+
+.rules-msg img:last-of-type {
+  display: block;
+  margin: auto;
+}
+
+@media (max-width: 567px) {
+  .rules-msg {
+    width: 320px;
+  }
+  .rules-msg img:last-of-type {
+    width: 80%;
+  }
+}
+
+.rules-msg .close {
+  float: right;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.rules-msg h3 {
+  display: inline-block;
+  margin: 0 0 30px;
+  font-size: 35px;
+  color: #464646;
+  padding: 0 0 0 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000008c;
+  z-index: 4;
+  display: none;
+}
+/* End Rules Message */
+
+/* Start Step 2 */
+.step-2 {
+  width: 650px;
+  margin: auto;
+  display: none;
+  justify-content: space-between;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+@media (max-width: 576px) {
+  .step-2 {
+    width: calc(100% - 15px);
+  }
+}
+
+.step-2 .user,
+.step-2 .computer {
+  display: inline-block;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0;
+}
+
+.step-2 .computer > div {
+  margin: auto;
+}
+
+.step-2 .computer {
+  width: 200px;
+  height: 205px;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-2 .computer section {
+  display: block;
+  height: 125px;
+}
+
+.step-2 .user {
+  width: 200px;
+}
+
+@media (max-width: 767px) {
+  .step-2 .computer,
+  .step-2 .user {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .step-2 .computer h3,
+  .step-2 .user h3 {
+    order: 2;
+    font-size: 15px;
+    float: inline-end;
+  }
+}
+
+.step-2 .computer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 125px;
+  height: 125px;
+  transform: translate(-50%, -24%);
+  background-color: #08112e33;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+  .step-2 .computer::after {
+    transform: translate(-50%, -70%);
+  }
+}
+
+.step-2 .computer section div:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.step-2 .computer section div {
+  position: absolute;
+  transition: 0.8s linear;
+  top: 50%;
+  transform: translate(-47%, -25%);
+}
+
+@media (max-width: 767px) {
+  .step-2 .computer div {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .step-2 {
+    width: calc(100% - 30px);
+    height: 44vh;
+    align-items: center;
+  }
+}
+
+.step-2 .computer section .paper {
+  left: -50%;
+}
+
+.step-2 .computer section .paper.show {
+  left: 150%;
+}
+
+.step-2 .computer section .scissors {
+  top: -50%;
+  left: 50%;
+}
+
+.step-2 .computer section .scissors.show {
+  top: 150%;
+}
+
+.step-2 .computer section .rock {
+  right: 100%;
+}
+
+.step-2 .computer section .rock.show {
+  right: -150%;
+}
+
+@media (max-width: 767px) {
+  .step-2 .computer section div {
+    transform: translate(-47%, -65%);
+  }
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.5s ease-out;
+}
+
+@media (max-width: 767px) {
+  .result {
+    position: absolute;
+    top: 100%;
+  }
+}
+
+.show-result {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.win {
+  position: absolute;
+  border: 100px solid rgba(131, 129, 129, 0.281);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  top: -50px;
+  left: -48px;
+  z-index: -1;
+}
+
+.win::after {
+  content: "";
+  position: absolute;
+  border: 130px solid rgba(131, 129, 129, 0.281);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  top: -130px;
+  left: -130px;
+  z-index: -1;
+}
+
+.win::before {
+  content: "";
+  position: absolute;
+  border: 160px solid rgba(131, 129, 129, 0.281);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  top: -160px;
+  left: -160px;
+  z-index: -1;
+}
+
+@media (max-width: 767px) {
+  .win {
+    display: none;
+  }
+}
+.result h3 {
+  margin: 0 0 15px 0;
+  letter-spacing: 3px;
+  font-size: 35px;
+}
+
+.result button {
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+  color: #dd405d;
+  border-radius: 6px;
+}
+/* End Step 2 */

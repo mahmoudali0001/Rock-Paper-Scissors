@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="55x55"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start Score & Logo -->
+    <div class="score-logo">
+      <img src="./images/logo.svg" alt="" class="logo" />
+      <div class="score">
+        <span>SCORE</span>
+        <h3>0</h3>
+      </div>
+    </div>
+    <!-- End Score & Logo -->
+
+    <!-- Start Rock, Paper, Scissors Buttons (Step - 1) -->
+    <div class="step-1">
+      <div class="paper">
+        <img src="./images/icon-paper.svg" alt="" />
+      </div>
+      <div class="scissors">
+        <img src="./images/icon-scissors.svg" alt="" />
+      </div>
+      <div class="rock">
+        <img src="./images/icon-rock.svg" alt="" />
+      </div>
+    </div>
+    <!-- End Rock, Paper, Scissors Buttons (Step - 1) -->
+
+    <!-- Start Rules  button -->
+    <div class="rules-btn">
+      <span>RULES</span>
+    </div>
+    <!-- End Rules button -->
+
+    <!-- Start Rock, Paper, Scissors Buttons (Step - 2) -->
+    <div class="step-2">
+      <div class="user">
+        <h3>YOU PICKED</h3>
+      </div>
+      <div class="result">
+        <h3></h3>
+        <button>PLAY AGAIN</button>
+      </div>
+      <div class="computer">
+        <h3>THE HOUSE PICKED</h3>
+        <section>
+          <div class="paper">
+            <img src="./images/icon-paper.svg" alt="" />
+          </div>
+          <div class="scissors">
+            <img src="./images/icon-scissors.svg" alt="" />
+          </div>
+          <div class="rock">
+            <img src="./images/icon-rock.svg" alt="" />
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- End Rock, Paper, Scissors Buttons (Step - 2) -->
+
+    <!-- Start Rules message  -->
+    <div class="rules-msg">
+      <h3>RULES</h3>
+      <img src="./images/icon-close.svg" alt="" class="close" />
+      <img src="./images/image-rules.svg" alt="" />
+    </div>
+    <div class="overlay"></div>
+
+    <!-- End Rules message  -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
